@@ -1,22 +1,17 @@
-package com.anabiozzze.ssm;
+package com.anabiozzze.ssm.planets;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
-public class Sun {
-    Texture img;
-    static Vector2 position;
-    private float width, height;
-
-    public Sun() {
+public class Saturn extends AbstractMoover {
+    public Saturn() {
         // set the pic source and size
-        Pixmap sunSize = new Pixmap(Gdx.files.internal("icons/sun.png"));
-        Pixmap finSize = new Pixmap(300, 300, sunSize.getFormat());
-        finSize.drawPixmap(sunSize,
-                0, 0, sunSize.getWidth(), sunSize.getHeight(),
+        Pixmap earthSize = new Pixmap(Gdx.files.internal("icons/saturn.png"));
+        Pixmap finSize = new Pixmap(200, 200, earthSize.getFormat());
+        finSize.drawPixmap(earthSize,
+                0, 0, earthSize.getWidth(), earthSize.getHeight(),
                 0, 0, finSize.getWidth(), finSize.getHeight()
         );
 
@@ -26,9 +21,4 @@ public class Sun {
         height = Gdx.graphics.getHeight()/2-img.getHeight()/2;
         position = new Vector2(width, height);
     }
-
-    public void render(SpriteBatch batch) {
-        batch.draw(img, position.x, position.y);
-    }
-
 }
