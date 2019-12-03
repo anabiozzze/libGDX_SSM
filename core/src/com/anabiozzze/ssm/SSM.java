@@ -38,7 +38,11 @@ public class SSM extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 		batch.begin();
-		sun.render(batch);
+		batch.setColor(0.9f, 0.9f, 0.9f, 0.8f);
+		sun.batch.begin();
+
+
+		sun.render();
 		merc.render(batch, 170, 0.009f);
 		venus.render(batch, 240, 0.008f);
 		earth.render(batch, 300, 0.007f);
@@ -47,6 +51,7 @@ public class SSM extends ApplicationAdapter {
 		sat.render(batch, 400, 0.004f);
 		uran.render(batch, 450, 0.003f);
 		nept.render(batch, 500, 0.002f);
+		sun.batch.end();
 		batch.end();
 	}
 	

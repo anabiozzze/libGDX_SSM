@@ -12,7 +12,7 @@ public abstract class AbstractMoover {
     protected float speed;
     protected float nextX, nextY; // coordinates and speed for moving in a circle
 
-    // moving to all planets
+    // moving for all planets
     public void render(SpriteBatch batch, float radius, float boost) {
         speed+=boost;
         nextX = radius * (float) Math.cos(speed);
