@@ -4,17 +4,20 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 
 public class Sun {
     protected SpriteBatch batch;
     private Texture img;
+    private TextureRegion region;
     private Vector2 position;
     private float width, height, red, green;
     private Pixmap sunSize;
     private Pixmap finSize;
     private int count;
-    private boolean changeColor;
+    private float rotation;
+
 
     public Sun() {
         batch = new SpriteBatch();
@@ -33,18 +36,24 @@ public class Sun {
         height = Gdx.graphics.getHeight()/2-img.getHeight()/2;
         position = new Vector2(width, height);
 
+        region = new TextureRegion(img);
+
         red = 0.9f;
         green = 0.6f;
+
     }
 
     // drawing, rotation and colors of sun
     public void render() {
-        batch.setColor(red, green, 0.0f, 0.8f);
-        batch.draw(img, position.x, position.y);
-        //void   draw(Texture texture, float x, float y, float originX, float originY, float width, float height, float scaleX, float scaleY, float rotation, int srcX, int srcY, int srcWidth, int srcHeight, boolean flipX, boolean flipY)
         count++;
+        rotation+=0.5;
 
-        // changing colors
+        batch.setColor(red, green, 0.0f, 0.8f);
+        batch.draw(region, position.x, position.y,
+                region.getRegionWidth()/2, region.getRegionHeight()/2,
+                300, 300, 1, 1, rotation);
+
+        // changing colors and rotation
         switch(count/180) {
             case 1:
                 red+=0.006f;
@@ -58,6 +67,5 @@ public class Sun {
                 count=0;
                 break;
         }
-
     }
 }
