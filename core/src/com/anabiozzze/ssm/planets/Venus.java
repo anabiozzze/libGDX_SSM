@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 
-public class Venus extends AbstractMoover {
+public class Venus extends AbstractMover {
     public Venus() {
         // set the start coordinates for the pic - in the center of the screen
         img = new Sprite(new Texture("icons/venus.png"));

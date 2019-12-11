@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 
-public class Uran extends AbstractMoover {
+public class Uran extends AbstractMover {
     public Uran() {
         // set the start coordinates for the pic - in the center of the screen
         img = new Sprite(new Texture("icons/uranus.png"));

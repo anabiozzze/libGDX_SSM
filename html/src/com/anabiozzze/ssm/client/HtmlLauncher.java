@@ -3,7 +3,7 @@ package com.anabiozzze.ssm.client;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import com.anabiozzze.ssm.SSM;
+import com.anabiozzze.ssm.planets.SSM;
 
 public class HtmlLauncher extends GwtApplication {
 

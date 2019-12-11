@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
-public class TestPlanet extends AbstractMoover {
+public class TestPlanet extends AbstractMover {
     protected Sprite img;
     protected Vector2 startPosition;
     protected float centerX, centerY;
