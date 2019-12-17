@@ -5,8 +5,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 
-public class Neptun extends AbstractMover {
-    public Neptun() {
+public class Neptune extends AbstractMover {
+    public Neptune() {
         // set the start coordinates for the pic - in the center of the screen
         img = new Sprite(new Texture("icons/nept.png"));
         centerX = Gdx.graphics.getWidth()/2-img.getWidth()/2;

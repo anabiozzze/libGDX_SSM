@@ -17,6 +17,8 @@ public abstract class AbstractMover {
 
     protected float count;
 
+    private Texture txt; // for changing info windows for different planets
+
     // moving for all planets
     public void render(SpriteBatch batch, float width, float height, float radius, float boost) {
         if (!pause) {
@@ -45,8 +47,10 @@ public abstract class AbstractMover {
             count++;
 
             if (count % 2 != 0) {
+                planetInfo();
+
                 pause = true;
-                SSM.infoWindow = new Sprite(new Texture("messageWin.png"));
+                SSM.infoWindow = new Sprite(txt);
                 float messX = Gdx.graphics.getWidth()/2-SSM.infoWindow.getWidth()/2;
                 float messY = Gdx.graphics.getHeight()/2-SSM.infoWindow.getHeight()/2;
                 SSM.infoWindow.setBounds(messX, messY, SSM.infoWindow.getWidth(), SSM.infoWindow.getHeight());
@@ -57,5 +61,19 @@ public abstract class AbstractMover {
             }
         }
         return true;
+    }
+
+    private void planetInfo() {
+        switch (this.getClass().getSimpleName()) {
+            case "Merc": txt = new Texture("messageMerc.png"); break;
+            case "Venus": txt = new Texture("messageVen.png"); break;
+            case "Earth": txt = new Texture("messageEarth.png"); break;
+            case "Mars": txt = new Texture("messageMars.png"); break;
+            case "Jupiter": txt = new Texture("messageJup.png"); break;
+            case "Saturn": txt = new Texture("messageSat.png"); break;
+            case "Uran": txt = new Texture("messageUran.png"); break;
+            case "Neptune": txt = new Texture("messageNept.png"); break;
+            default: txt = new Texture("messageWin.png"); // empty standard
+        }
     }
 }

@@ -18,7 +18,7 @@ public class SSM extends ApplicationAdapter {
     private Jupiter jup;
     private Saturn sat;
     private Uran uran;
-    private Neptun nept;
+    private Neptune nept;
 
     public static Sprite infoWindow; // window with info about the missions to current planet
     protected float messX; // X for messageWin
@@ -40,7 +40,7 @@ public class SSM extends ApplicationAdapter {
 		jup = new Jupiter();
 		sat = new Saturn();
 		uran = new Uran();
-		nept = new Neptun();
+		nept = new Neptune();
 	}
 
 	@Override
