@@ -65,14 +65,14 @@ public class SSM extends ApplicationAdapter {
         Gdx.input.setInputProcessor(new InputAdapter(){
             @Override
             public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-				merc.reactToClick(batch, screenX, screenY);
-				venus.reactToClick(batch, screenX, screenY);
-				earth.reactToClick(batch, screenX, screenY);
-				mars.reactToClick(batch, screenX, screenY);
-				jup.reactToClick(batch, screenX, screenY);
-				sat.reactToClick(batch, screenX, screenY);
-				uran.reactToClick(batch, screenX, screenY);
-				nept.reactToClick(batch, screenX, screenY);
+				merc.reactToClick(screenX, screenY);
+				venus.reactToClick(screenX, screenY);
+				earth.reactToClick(screenX, screenY);
+				mars.reactToClick(screenX, screenY);
+				jup.reactToClick(screenX, screenY);
+				sat.reactToClick(screenX, screenY);
+				uran.reactToClick(screenX, screenY);
+				nept.reactToClick(screenX, screenY);
                 return true;
             }
         });

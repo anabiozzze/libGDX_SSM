@@ -39,7 +39,7 @@ public abstract class AbstractMover {
         yPos = Gdx.graphics.getHeight() - img.getY() - img.getHeight() / 2;
     }
 
-    public boolean reactToClick(SpriteBatch batch, int screenX, int screenY) {
+    public boolean reactToClick(int screenX, int screenY) {
         // Check the coincidence of the coordinates of the image area and the click point
         if ((Math.abs(xPos - screenX) <= img.getWidth()/2) && (Math.abs(yPos - screenY) <= img.getHeight()/2)) {
             System.out.println(this.getClass().toString().substring(33).toUpperCase() + " Clicked");
